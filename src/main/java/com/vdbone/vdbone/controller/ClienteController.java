@@ -42,7 +42,7 @@ public class ClienteController  {
     }
 
     @RequestMapping(value = "/getCuentas/{id}", method = RequestMethod.GET)
-    public List<Cuenta> getCuentas(@PathVariable Long id){
+    public List<Object> getCuentas(@PathVariable Long id){
         return this.clienteService.getCuentas(id);
     }
 

@@ -1,6 +1,8 @@
 package com.vdbone.vdbone.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "cliente")
@@ -29,6 +31,17 @@ public class Cliente extends ParentEntity{
     @Column(name = "id_cuenta",nullable = true,length = 11)
     private String idCuenta;
 
+    @OneToMany(mappedBy = "idCliente", cascade = CascadeType.PERSIST)
+    private List<Cuenta> cuentas = new ArrayList<Cuenta>();
+
+
+    public List<Cuenta> getCuentas() {
+        return cuentas;
+    }
+
+    public void setCuentas(List<Cuenta> cuentas) {
+        this.cuentas = cuentas;
+    }
 
     public String getIdCuenta() {
         return idCuenta;

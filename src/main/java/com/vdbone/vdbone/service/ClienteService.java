@@ -32,5 +32,5 @@ public interface ClienteService {
      * @param id
      * @return
      */
-    List<Cuenta> getCuentas(Long id);
+    List<Object> getCuentas(Long id);
 }

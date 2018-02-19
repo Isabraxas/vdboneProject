@@ -14,5 +14,5 @@ public interface ClienteRepository extends JpaRepository<Cliente,Long> {
     List<Cliente> findByCorreo(String correo);
 
     @Query(value = "select cuenta.* from cliente left join cuenta on cliente.id= cuenta.id_cliente where cliente.id=?1", nativeQuery = true)
-    List<Cuenta> findCuentaByIdCliente(Long id);
+    List<Object> findCuentaByIdCliente(Long id);
 }

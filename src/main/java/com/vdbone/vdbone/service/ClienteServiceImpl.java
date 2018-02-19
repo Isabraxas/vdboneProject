@@ -36,7 +36,7 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public List<Cuenta> getCuentas(Long id) {
+    public List<Object> getCuentas(Long id) {
         return this.clienteRepository.findCuentaByIdCliente(id);
     }
 }
